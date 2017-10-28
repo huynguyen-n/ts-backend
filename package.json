@@ -1,0 +1,49 @@
+{
+  "name": "ts-backend",
+  "version": "1.0.0",
+  "description": "This is backend repo for TalentSpace project",
+  "scripts": {
+    "babel-node": "babel-node",
+    "build": "./node_modules/.bin/babel src --out-dir dist/src --copy-files",
+    "eslint": "./node_modules/.bin/eslint src/**/*.js",
+    "eslint-fix": "./node_modules/.bin/eslint src/**/*.js --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luannm/ts-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luannm/ts-backend/issues"
+  },
+  "homepage": "https://github.com/luannm/ts-backend#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-plugin-transform-promise-to-bluebird": "^1.1.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-bluebird": "^1.0.1",
+    "babel-preset-latest": "^6.24.0",
+    "babel-register": "^6.23.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "pre-commit": "^1.2.2",
+    "serverless": "^1.11.0",
+    "serverless-webpack": "^2.2.1",
+    "webpack": "^3.8.1",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "babel-loader": "^7.1.1",
+    "babel-runtime": "^6.25.0",
+    "bluebird": "^3.5.0",
+    "lodash": "^4.17.4",
+    "source-map-support": "^0.4.15",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "pre-commit": [
+    "eslint"
+  ]
+}
