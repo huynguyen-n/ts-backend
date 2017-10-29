@@ -1,1 +1,4 @@
-export const hello = (event, context, callback) => callback(null, 'Hello World');
+export const hello = (event, context, callback) => callback(null, {
+  body: 'Hello World',
+  event,
+});

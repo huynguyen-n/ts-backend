@@ -45,7 +45,12 @@ package:
 
 plugins:
   - serverless-webpack
+  - serverless-offline
 
 functions:
   hello:
     handler: src/services/index.hello
+    events:
+      - http:
+          method: GET
+          path: test
