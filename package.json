@@ -6,7 +6,8 @@
     "babel-node": "babel-node",
     "build": "./node_modules/.bin/babel src --out-dir dist/src --copy-files",
     "eslint": "./node_modules/.bin/eslint src/**/*.js",
-    "eslint-fix": "./node_modules/.bin/eslint src/**/*.js --fix"
+    "eslint-fix": "./node_modules/.bin/eslint src/**/*.js --fix",
+    "start": "serverless offline start"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "eslint-plugin-import": "^2.8.0",
     "pre-commit": "^1.2.2",
     "serverless": "^1.11.0",
+    "serverless-offline": "^3.16.0",
     "serverless-webpack": "^2.2.1",
     "webpack": "^3.8.1",
     "webpack-node-externals": "^1.6.0"
