@@ -7,7 +7,7 @@
     "build": "./node_modules/.bin/babel src --out-dir dist/src --copy-files",
     "eslint": "./node_modules/.bin/eslint src/**/*.js",
     "eslint-fix": "./node_modules/.bin/eslint src/**/*.js --fix",
-    "start": "serverless offline start"
+    "start": "serverless offline start --port 4000"
   },
   "repository": {
     "type": "git",
@@ -40,8 +40,12 @@
   "dependencies": {
     "babel-loader": "^7.1.1",
     "babel-runtime": "^6.25.0",
+    "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.5.0",
+    "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.4",
+    "moment": "^2.19.1",
+    "mongoose": "^4.12.5",
     "source-map-support": "^0.4.15",
     "webpack-node-externals": "^1.6.0"
   },

@@ -28,10 +28,7 @@ provider:
   profile: ${opt:profile, self:provider.stage}
   timeout: 60
   # Set environment variables
-  environment:
-    STAGE: ${self:provider.stage}
-    NODE_ENV: ${self:provider.stage}
-    SERVICE_NAME: ${self:service}
+  environment: ${file(./config/env.yml):${self:provider.stage}}
   # Set IAM role
   iamRoleStatements:
     - Effect: "Allow"
@@ -48,9 +45,15 @@ plugins:
   - serverless-offline
 
 functions:
-  hello:
-    handler: src/services/index.hello
+  authorizer:
+    handler: src/services/auth/authorizer.default
+  login:
+    handler: src/services/auth/login.default
     events:
       - http:
-          method: GET
-          path: test
+          method: POST
+          path: auth/login
+          cors: true
+          # authorizer:
+          #   name: authorizer
+          #   resultTtlInSeconds: 0
