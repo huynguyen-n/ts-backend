@@ -16,7 +16,7 @@ service: tsServices${opt:user, self:custom.defaultUser}
 custom:
   defaultUser: ''
   baseUrl: ''
-  defaultStage: 'dev'
+  defaultStage: 'local'
   defaultRegion: 'ap-southeast-1'
   webpackIncludeModules: true
 

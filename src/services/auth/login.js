@@ -3,6 +3,7 @@ import jsonResponse from '../../utils/jsonResponse';
 import { generateToken } from '../../utils/jwtHelper';
 
 export default (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
   try {
     const bodyParams = JSON.parse(event.body);
     const { email, password } = bodyParams;
@@ -20,6 +21,7 @@ export default (event, context, callback) => {
         if (!passwordMatched) {
           return callback(null, jsonResponse.badRequest('User not found'));
         }
+        // TODO: Implement logic to check if user has been activated or already verified email
         const tokenPayload = {
           data: user.toObject(),
         };
