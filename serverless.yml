@@ -57,3 +57,10 @@ functions:
           # authorizer:
           #   name: authorizer
           #   resultTtlInSeconds: 0
+  candidateApply:
+    handler: src/services/candidate/apply.default
+    events:
+      - http:
+          method: POST
+          path: candidate/apply
+          cors: true
