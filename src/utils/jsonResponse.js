@@ -13,8 +13,7 @@ const response = (body = {}, headers = {}, statusCode = 200) => (
 
 const errorResponse = (error = {}, headers = {}, status = 500) => {
   const message = typeof error === 'string' ? error : error.message;
-  console.log('An error response has been sent');
-  console.log(error);
+  console.log('An error response has been sent: ', error);
 
   return response({
     status,

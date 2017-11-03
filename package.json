@@ -46,7 +46,7 @@
     "jsonwebtoken": "^8.1.0",
     "lodash": "^4.17.4",
     "moment": "^2.19.1",
-    "mongoose": "^4.12.5",
+    "mongoose": "4.10.2",
     "source-map-support": "^0.4.15",
     "webpack-node-externals": "^1.6.0"
   },
