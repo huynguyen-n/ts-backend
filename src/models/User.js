@@ -58,5 +58,13 @@ schema.methods.comparePassword = function (userPassword) {
   });
 };
 
+schema.statics.checkEmailExisted = function (email) {
+  return this.findOne({ email }).then((user) => {
+    if (user) return Promise.resolve(true);
+    return Promise.resolve(false);
+  }).catch(err => Promise.reject(err));
+};
+
+
 export default db.model('User', schema);
 

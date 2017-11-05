@@ -21,7 +21,12 @@ export default (event, context, callback) => {
         if (!passwordMatched) {
           return callback(null, jsonResponse.badRequest('User not found'));
         }
-        // TODO: Implement logic to check if user has been activated or already verified email
+        if (!user.email_verified) {
+          return callback(null, jsonResponse.badRequest('Account email not verified'));
+        }
+        if (!user.activated) {
+          return callback(null, jsonResponse.badRequest('Account not activated'));
+        }
         const tokenPayload = {
           data: user.toObject(),
         };
