@@ -18,15 +18,13 @@
 ### AWS account deployment
 1. Request and configure a DEV aws account [IAM user credentials](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey)
 
-2. Deploy using serverless command
+2. Deploy
 
 ```sh
-serverless deploy --stage [STAGE] --user [YOUR_NAME]
+npm run deploy:[STAGE]
 ```
 
-```user``` option will be passed to the serverless configuration to create an individual Lambda Service.
-
-```stage``` option will be used to deploy service with specific stage. Allowed stages are: `dev, staging, production`
+```stage``` option will be used to deploy service with specific stage. Allowed stages are: `dev, uat, prod`
 
 For example if your serverless.yml service name is ```myService``` and your function name is ```myFunction```.
 Then a ```serverless deploy --stage dev --user MyName``` will deploy a lambda named ```myServiceMyName-dev-myfunction```.

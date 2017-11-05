@@ -11,13 +11,13 @@
 #
 # Happy Coding!
 
-service: tsServices${opt:user, self:custom.defaultUser}
+service: tsServices
 
 custom:
-  defaultUser: ''
   baseUrl: ''
   defaultStage: 'local'
   defaultRegion: 'ap-southeast-1'
+  defaultProfile: 'talentspace'
   webpackIncludeModules: true
 
 provider:
@@ -25,7 +25,7 @@ provider:
   runtime: nodejs6.10
   stage: ${opt:stage, self:custom.defaultStage}
   region: ${self:custom.defaultRegion}
-  profile: ${opt:profile, self:provider.stage}
+  profile: ${opt:profile, self:custom.defaultProfile}
   timeout: 60
   # Set environment variables
   environment: ${file(./config/env.yml):${self:provider.stage}}

@@ -7,7 +7,10 @@
     "build": "./node_modules/.bin/babel src --out-dir dist/src --copy-files",
     "eslint": "./node_modules/.bin/eslint src/**/*.js",
     "eslint-fix": "./node_modules/.bin/eslint src/**/*.js --fix",
-    "start": "serverless offline start --port 4000"
+    "start": "serverless offline start --port 4000",
+    "deploy:dev": "sls deploy --stage dev",
+    "deploy:uat": "sls deploy --stage uat",
+    "deploy:prod": "sls deploy --stage prod"
   },
   "repository": {
     "type": "git",
@@ -30,6 +33,7 @@
     "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
     "pre-commit": "^1.2.2",
     "serverless": "^1.11.0",
     "serverless-offline": "^3.16.0",
