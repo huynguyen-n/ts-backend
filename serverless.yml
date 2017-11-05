@@ -64,3 +64,10 @@ functions:
           method: POST
           path: candidate/apply
           cors: true
+  employerApply:
+    handler: src/services/employer/apply.default
+    events:
+      - http:
+          method: POST
+          path: employer/apply
+          cors: true

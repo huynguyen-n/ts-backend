@@ -2,10 +2,7 @@ import { Schema } from 'mongoose';
 import db from './db';
 
 const schema = new Schema({
-  user_id: {
-    type: Schema.Types.ObjectId,
-    required: true,
-  },
+  user_id: Schema.Types.ObjectId,
   email: {
     type: String,
     required: true,
