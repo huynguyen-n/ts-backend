@@ -5,6 +5,7 @@ import ApplyForm from '../../models/ApplyForm';
 
 // TODO: Handle candidate upload CV
 export default (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
   try {
     const bodyParams = JSON.parse(event.body);
     const requiredParams = ['email', 'password', 'full_name', 'skype_id', 'skills'];
