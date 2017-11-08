@@ -71,3 +71,10 @@ functions:
           method: POST
           path: employer/apply
           cors: true
+  searchJob:
+    handler: src/services/job/search.default
+    events:
+      - http:
+          method: GET
+          path: job/search
+          cors: true

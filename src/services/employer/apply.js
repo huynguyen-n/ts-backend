@@ -3,6 +3,7 @@ import jsonResponse from '../../utils/jsonResponse';
 import ApplyForm from '../../models/ApplyForm';
 
 export default (event, context, callback) => {
+  context.callbackWaitsForEmptyEventLoop = false;
   try {
     const bodyParams = JSON.parse(event.body);
     const requiredParams = ['email', 'company_name', 'full_name'];

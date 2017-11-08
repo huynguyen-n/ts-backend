@@ -1,0 +1,91 @@
+openapi: 3.0.0
+servers:
+  - url: 'https://sd13b5avtd.execute-api.ap-southeast-1.amazonaws.com/dev'
+info:
+  version: 1.0.0
+  title: TalentSpace API
+  description: TalentSpace Project APIs
+paths:
+  '/auth/login':
+    post:
+      description: For user login with email & password
+      parameters:
+        - name: email
+          in: path
+          required: true
+          description: User email for login
+          schema:
+            type: string
+        - name: password
+          in: path
+          required: true
+          description: User password for login
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Login successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: JWT_TOKEN
+        '400':
+          description: Missing parameters or user not found or account not verified or activiated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorResponse400'
+        '500':
+          description: Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/errorResponse500'
+components:
+  schemas:
+    errorResponse404:
+      type: object
+      description: Not Found.
+      properties:
+        status:
+          type: integer
+          example: 404
+        code:
+          type: string
+          enum:
+            - NOT_FOUND
+        detail:
+          type: string
+          example: Resquest item was not found
+    errorResponse400:
+      type: object
+      description: Bad Request.
+      properties:
+        status:
+          type: integer
+          example: 400
+        code:
+          type: string
+          enum:
+            - MISSING_PARAMETER
+        detail:
+          type: string
+          example: Mandatory parameter is missing
+    errorResponse500:
+      type: object
+      description: Server Error.
+      properties:
+        status:
+          type: integer
+          example: 500
+        code:
+          type: string
+          enum:
+            - DB_ERROR
+        detail:
+          type: string
+          example: An error occurred while trying to call the DB
